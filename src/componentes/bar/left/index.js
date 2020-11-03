@@ -53,9 +53,9 @@ const ListItem = styled.div`
     padding:10px 0;
     width:98%;
     &:hover{
-        background:linear-gradient(to bottom left ,#48b7ad ,#221e5a 130%);
+        background:linear-gradient(to left ,#48b7ad 140%,#221e5a 100%);
         border-left:4px solid #221e5a;
-        box-shadow:-5px 2px 10px #221e5a ;
+        box-shadow:-5px 2px 5px #221e5a ;
     }
     &.selected{
         border-right:4px solid #221e5a;
@@ -73,7 +73,7 @@ export default function LeftBar() {
             <Avatar alt="Remy Sharp" src={foto} style={{ boxShadow: '0px -10px 50px rgba(0,0,0,.7)', height: '150px', width: '150px' }} />
             <MyName>Antonio Kipanda Cardoso</MyName>
             <MyJob>Estudante</MyJob>
-            <Button variant="outlined" color="primary" style={{ fontWeight: 'lighter', marginTop: '5px', padding: '0px 25px', textTransform: 'lowercase', color: '#ddd', borderRadius: '50px' }}>
+            <Button style={{ backgroundColor: '#fff', fontWeight: '400', marginTop: '5px', padding: '0px 25px', textTransform: 'lowercase', color: '#48b7ad', borderRadius: '50px' }}>
                 Ver perfil
             </Button>
 

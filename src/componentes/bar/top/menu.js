@@ -29,18 +29,18 @@ export default function SimpleMenu() {
         <Fundo>
             <IconButton style={{ marginRight: '15px' }}>
                 <Badge badgeContent={4} color="error">
-                    <NotificationsIcon style={{ color: 'rgba(0,0,0,.8)' }} />
+                    <NotificationsIcon style={{ color: '#48b7ad' }} />
                 </Badge>
             </IconButton>
             <IconButton>
-                <Avatar alt="Remy Sharp" src={foto} style={{ border: '2px solid #ddd', marginRight: '5px' }} />
+                <Avatar alt="Remy Sharp" src={foto} style={{ border: '2px solid #48b7ad', marginRight: '5px' }} />
             </IconButton>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+            <Button aria-controls="simple-menu" aria-haspopup="true" style={{ color: '#48b7ad' }} onClick={handleClick}>
                 @KipandaCardoso <ExpandMoreIcon />
             </Button>
             <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-                <MenuItem onClick={handleClose}><PersonPinIcon />Editar perfil</MenuItem>
-                <MenuItem onClick={handleClose} ><SettingsPowerIcon color="error" />Terminar sessão</MenuItem>
+                <MenuItem onClick={handleClose} style={{ color: '#48b7ad' }}><PersonPinIcon />Editar perfil</MenuItem>
+                <MenuItem onClick={handleClose}><SettingsPowerIcon color="error" />Terminar sessão</MenuItem>
             </Menu>
         </Fundo>
     );

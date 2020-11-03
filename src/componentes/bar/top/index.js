@@ -10,7 +10,7 @@ const Fundo = styled.div`
     Justify-content:space-between;
     height:70px;
     align-Items:center;
-    box-shadow:2px 3px 5px rgba(0,0,0,.6);
+    box-shadow:2px 1px 3px rgba(0,0,0,.2);
 `;
 
 export default function TopoBar() {
