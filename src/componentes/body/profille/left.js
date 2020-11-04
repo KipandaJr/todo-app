@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Avatar, Button, Checkbox, FormControlLabel, FormGroup, IconButton } from '@material-ui/core';
+import { Checkbox, FormControlLabel, FormGroup } from '@material-ui/core';
 
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
@@ -32,9 +32,8 @@ const Text = styled.span`
     text-align:center;
     &.title{
         font-size:17px;
-        font-weight: 600;
-        margin-top:250px;
-
+        font-weight: 300;
+        margin-top:25px;
     }
     &.subTitleValue{
         font-size:17px;
@@ -61,7 +60,7 @@ const Title = styled.h1`
 const Content = styled.div`
     display:flex;
     justify-content: space-between;
-    margin-top:15px;
+    margin-top:5px;
 `;
 export default function Left() {
     return (
@@ -113,6 +112,14 @@ export default function Left() {
                     </div>
                     <div>
                         <Title>
+                            Facebook
+                        </Title>
+                        <Text className="subTitleValue">
+                            @KipandaCardoso
+                        </Text>
+                    </div>
+                    <div>
+                        <Title>
                             Twitter
                         </Title>
                         <Text className="subTitleValue">
@@ -121,10 +128,10 @@ export default function Left() {
                     </div>
                     <div>
                         <Title>
-                            Facebook
+                            Github
                         </Title>
                         <Text className="subTitleValue">
-                            @KipandaCardoso
+                            @KipandaJr
                         </Text>
                     </div>
                 </Content>
@@ -135,29 +142,29 @@ export default function Left() {
                 </Text>
                 <Content>
                     <ThemeProvider theme={theme}>
-                        <FormGroup row>
+                        <FormGroup style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                             <FormControlLabel
                                 control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" color="primary" />}
-                                label="Parar de procrastinar" style={{ fontSize: '17px', fontWeight: '300', color: 'rgba(0,0,0,.7)' }}
+                                label="meta aceite #1" style={{ fontSize: '17px', fontWeight: '300', color: 'rgba(0,0,0,.7)' }}
                             />
                             <FormControlLabel
                                 control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" color="primary" />}
-                                label="Cumprir metas"
+                                label="meta aceite #2"
                                 style={{ fontSize: '17px', fontWeight: '300', color: 'rgba(0,0,0,.7)' }}
                             />
                             <FormControlLabel
                                 control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" color="primary" />}
-                                label="Cumprir metas"
+                                label="meta aceite #3"
                                 style={{ fontSize: '17px', fontWeight: '300', color: 'rgba(0,0,0,.7)' }}
                             />
                             <FormControlLabel
                                 control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" color="primary" />}
-                                label="Cumprir metas"
+                                label="meta aceite #4"
                                 style={{ fontSize: '17px', fontWeight: '300', color: 'rgba(0,0,0,.7)' }}
                             />
                             <FormControlLabel
                                 control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" color="primary" />}
-                                label="Cumprir metas"
+                                label="meta aceite #5"
                                 style={{ fontSize: '17px', fontWeight: '300', color: 'rgba(0,0,0,.7)' }}
                             />
                         </FormGroup>

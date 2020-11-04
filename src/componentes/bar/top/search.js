@@ -1,12 +1,10 @@
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import { InputAdornment, TextField } from '@material-ui/core';
 import styled from 'styled-components';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { AccountCircle } from '@material-ui/icons';
 
 const theme = createMuiTheme({
     palette: {

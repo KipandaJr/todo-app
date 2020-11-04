@@ -1,0 +1,28 @@
+.task {
+  
+}
+
+/*.task:before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(to bottom left, #48b7ad 30%, #4f48b7 130%);
+  transform: skewY(5deg);
+  transition: 0.7s;
+}
+.task:hover:before {
+  top: 10%;
+  transform: skewY(390deg);
+}
+.task:after {
+  content: "Kipas-Todo";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: lighter;
+  font-size: 1.5em;
+  color: rgba(0, 0, 0, 0.2);
+}
+*/

@@ -17,6 +17,7 @@ const Fundo = styled.div`
     flex-direction:column;
     align-items: center;
     padding-top:50px;
+    position:fixed;
 `;
 
 const MyName = styled.span`
@@ -52,6 +53,7 @@ const ListItem = styled.div`
     align-items:center;
     padding:10px 0;
     width:98%;
+    transition:.6s;
     &:hover{
         background:linear-gradient(to left ,#48b7ad 140%,#221e5a 100%);
         border-left:4px solid #221e5a;
@@ -88,7 +90,7 @@ export default function LeftBar() {
                 </ListItem>
                 <ListItem>
                     <Icone alt="ideia" src={ideia} />
-                    <span>Nova Tarefa</span>
+                    <span>Nova actividades</span>
                 </ListItem>
                 <ListItem>
                     <Icone alt="listTodo" src={listTodo} />

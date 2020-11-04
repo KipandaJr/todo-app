@@ -27,13 +27,13 @@ export default function SimpleMenu() {
 
     return (
         <Fundo>
-            <IconButton style={{ marginRight: '15px' }}>
+            <IconButton style={{ marginRight: '3px' }}>
                 <Badge badgeContent={4} color="error">
                     <NotificationsIcon style={{ color: '#48b7ad' }} />
                 </Badge>
             </IconButton>
             <IconButton>
-                <Avatar alt="Remy Sharp" src={foto} style={{ border: '2px solid #48b7ad', marginRight: '5px' }} />
+                <Avatar alt="Remy Sharp" src={foto} style={{ border: '2px solid #48b7ad' }} />
             </IconButton>
             <Button aria-controls="simple-menu" aria-haspopup="true" style={{ color: '#48b7ad' }} onClick={handleClick}>
                 @KipandaCardoso <ExpandMoreIcon />
