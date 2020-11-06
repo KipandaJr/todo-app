@@ -8,6 +8,7 @@ import dash from '../../../_files/icon/task.ico';
 import calendar from '../../../_files/icon/calendar.ico';
 import ideia from '../../../_files/icon/idea.ico';
 import listTodo from '../../../_files/icon/list-todo.ico';
+import { IconButton } from '@material-ui/core';
 
 const Fundo = styled.div`
     width:300px;
@@ -16,7 +17,7 @@ const Fundo = styled.div`
     height:1000px;
     flex-direction:column;
     align-items: center;
-    padding-top:50px;
+    padding-top:20px;
     position:fixed;
 `;
 
@@ -72,7 +73,9 @@ const Icone = styled.img`
 export default function LeftBar() {
     return (
         <Fundo>
-            <Avatar alt="Remy Sharp" src={foto} style={{ boxShadow: '0px -10px 50px rgba(0,0,0,.7)', height: '150px', width: '150px' }} />
+            <IconButton style={{ padding: '20px', background: 'rgba(0,0,0,.05)' }}>
+                <Avatar alt="Remy Sharp" src={foto} style={{ height: '150px', width: '150px' }} />
+            </IconButton>
             <MyName>Antonio Kipanda Cardoso</MyName>
             <MyJob>Estudante</MyJob>
             <Button style={{ backgroundColor: '#fff', fontWeight: '400', marginTop: '5px', padding: '0px 25px', textTransform: 'lowercase', color: '#48b7ad', borderRadius: '50px' }}>

@@ -3,7 +3,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Dialog
 import FiberNewOutlinedIcon from '@material-ui/icons/FiberNewOutlined';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 //import styled, { keyframes } from 'styled-components';
-import './index.css';
+import './inBloco.css';
 /*
 const firstAnimation = keyframes`
   0% {

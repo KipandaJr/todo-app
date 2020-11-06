@@ -3,8 +3,8 @@ import LeftBar from './componentes/bar/left';
 import TopoBar from './componentes/bar/top';
 //import Profille from './componentes/body/profille';
 //import Actividades from './componentes/body/actividades';
-//import InsertActivity from './componentes/body/actividades/insertActivity';
-import Planos from './componentes/body/planos/';
+import InsertActivity from './componentes/body/actividades/insertActivity';
+//import Planos from './componentes/body/planos/';
 import styled from 'styled-components';
 
 const MyContainer = styled.div`
@@ -34,7 +34,7 @@ export default function App() {
       <Right>
         <TopoBar />
         <Body>
-          <Planos />
+          <InsertActivity />
         </Body>
       </Right>
     </MyContainer>
