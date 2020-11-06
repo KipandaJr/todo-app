@@ -10,3 +10,7 @@
 .item:hover .content-box .buttons {
   top: 5px;
 }
+
+.esconde {
+  overflow-y: hidden !important;
+}

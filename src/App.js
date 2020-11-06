@@ -2,8 +2,9 @@ import React from 'react';
 import LeftBar from './componentes/bar/left';
 import TopoBar from './componentes/bar/top';
 //import Profille from './componentes/body/profille';
-import Actividades from './componentes/body/actividades';
-//import Planos from './componentes/body/planos/';
+//import Actividades from './componentes/body/actividades';
+//import InsertActivity from './componentes/body/actividades/insertActivity';
+import Planos from './componentes/body/planos/';
 import styled from 'styled-components';
 
 const MyContainer = styled.div`
@@ -18,8 +19,10 @@ const Right = styled.div`
   height:650px;
 `;
 
+
 const Body = styled.div`
   display:flex;
+  flex-direction:column;
   padding:10px;
   width:90%;
   margin:4px auto;
@@ -31,7 +34,7 @@ export default function App() {
       <Right>
         <TopoBar />
         <Body>
-          <Actividades />
+          <Planos />
         </Body>
       </Right>
     </MyContainer>

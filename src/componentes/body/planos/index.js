@@ -1,7 +1,7 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 import Programacao from './programacao';
+import Form from './form';
 import More from './more';
 
 const Fundo = styled.div`
@@ -26,7 +26,6 @@ const Text = styled.span`
     }
 `;
 export default function Plano() {
-
     return (
         <Fundo>
             <Header>
@@ -36,8 +35,8 @@ export default function Plano() {
                 <Text className="subtitle">
                     Gerencie e crie seus planos diários para que possas ter um dia produtivo.
                 </Text>
-
             </Header>
+            <Form />
             <Programacao />
             <More />
         </Fundo>
