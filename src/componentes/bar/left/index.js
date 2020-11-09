@@ -9,16 +9,19 @@ import calendar from '../../../_files/icon/calendar.ico';
 import ideia from '../../../_files/icon/idea.ico';
 import listTodo from '../../../_files/icon/list-todo.ico';
 import { IconButton } from '@material-ui/core';
-
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {
+    toogleFormActivity
+} from '../../../redux/outros/formActivitySlice';
 const Fundo = styled.div`
     width:300px;
     background: linear-gradient(to bottom left , #48b7ad, #4f48b7 130%);
     display:flex;
-    height:1000px;
     flex-direction:column;
     align-items: center;
-    padding-top:20px;
-    position:fixed;
+    padding-top:50px;
+    position:sticky;
 `;
 
 const MyName = styled.span`
@@ -41,7 +44,7 @@ const ListAction = styled.div`
     flex-direction:column;
     align-items:center;
     width:100%;
-    margin-top:50px;
+    margin-top:25px;
     color:#fff;
     font-size:15px;
     font-weight: lighter;
@@ -71,6 +74,10 @@ const Icone = styled.img`
 `;
 
 export default function LeftBar() {
+    const dispatch = useDispatch();
+    const openForm = () => {
+        dispatch(toogleFormActivity());
+    };
     return (
         <Fundo>
             <IconButton style={{ padding: '20px', background: 'rgba(0,0,0,.05)' }}>
@@ -78,20 +85,25 @@ export default function LeftBar() {
             </IconButton>
             <MyName>Antonio Kipanda Cardoso</MyName>
             <MyJob>Estudante</MyJob>
-            <Button style={{ backgroundColor: '#fff', fontWeight: '400', marginTop: '5px', padding: '0px 25px', textTransform: 'lowercase', color: '#48b7ad', borderRadius: '50px' }}>
+            <Link to="account/ver-perfil"><Button style={{ backgroundColor: '#fff', fontWeight: '400', marginTop: '5px', padding: '0px 25px', textTransform: 'lowercase', color: '#48b7ad', borderRadius: '50px' }}>
                 Ver perfil
             </Button>
-
+            </Link>
             <ListAction>
-                <ListItem className="selected">
-                    <Icone alt="calendar" src={calendar} />
-                    <span>Minhas actividades</span>
-                </ListItem>
-                <ListItem>
-                    <Icone alt="dash" src={dash} />
-                    <span>Planos</span>
-                </ListItem>
-                <ListItem>
+                <Link to="account/" style={{ width: '100%' }} >
+                    <ListItem className="selected">
+                        <Icone alt="calendar" src={calendar} />
+                        <span>Minhas actividades</span>
+                    </ListItem>
+                </Link>
+                <Link to="account/planos" style={{ width: '100%' }} >
+                    <ListItem>
+                        <Icone alt="dash" src={dash} />
+                        <span> Planos </span>
+
+                    </ListItem>
+                </Link>
+                <ListItem onClick={() => { openForm() }}>
                     <Icone alt="ideia" src={ideia} />
                     <span>Nova actividades</span>
                 </ListItem>

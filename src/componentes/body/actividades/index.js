@@ -13,7 +13,6 @@ const Fundo = styled.div`
 `;
 const Actividades = () => {
     const [view, setView] = React.useState('blocos');
-
     const handleChange = (event, nextView) => {
         if (nextView !== null && view !== nextView)
             setView(nextView);

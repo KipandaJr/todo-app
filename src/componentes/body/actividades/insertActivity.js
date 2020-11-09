@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, TextField } from '@material-ui/core';
 import FiberNewOutlinedIcon from '@material-ui/icons/FiberNewOutlined';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  newActividade,
+} from '../../../redux/atividade/actividadeSlice';
+import {
+  toogleFormActivity,
+  selectFormActivity
+} from '../../../redux/outros/formActivitySlice';
+import {
+  newCategoria,
+  selectCategoria
+} from '../../../redux/categoria/categoriaSlice';
 //import styled, { keyframes } from 'styled-components';
 import './inBloco.css';
 /*
@@ -86,45 +98,72 @@ const Dialog1 = styled(Dialog)({
     overflow: 'hidden'
 });*/
 const InsertActivity = () => {
-  const [open, setOpen] = React.useState(true);
+  const [nomeActividade, setNomeActividade] = useState('');
+  const [categoria, setcategoria] = useState('');
+  const openForm = useSelector(selectFormActivity);
+  const tpmCategoria = useSelector(selectCategoria);
+  const dispatch = useDispatch();
+  const submitData = () => {
+    dispatch(newActividade({ name: nomeActividade, indexCategoria: getIndexCategoria() }));
+    setNomeActividade('');
+    closeForm();
+  }
 
-  const handleClose = () => {
-    setOpen(false);
+  const putActivityName = (event) => {
+    setNomeActividade(event.target.value);
+  };
+
+  const putCategoria = (event, name) => {
+    setcategoria(name);
+  };
+
+  const getIndexCategoria = () => {
+    for (let i = 0; i < tpmCategoria["length"]; i++) {
+      if (tpmCategoria[i].name === categoria)
+        return tpmCategoria[i].index;
+    }
+    dispatch(newCategoria({ name: categoria, icon: 6 }));
+    return tpmCategoria[tpmCategoria["length"] - 1].index + 1;
+    //getIndexCategoria();
+  }
+  const closeForm = () => {
+    setNomeActividade('');
+    dispatch(toogleFormActivity());
   };
   return (
-    <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} id="dialog">
+    <Dialog onClose={closeForm} aria-labelledby="customized-dialog-title" open={openForm} id="dialog">
       <DialogTitle style={{ background: 'linear-gradient(to bottom left,#48b7ad 30%,#4f48b7 130%)' }} id="form-dialog-title">
         <IconButton>
           <FiberNewOutlinedIcon style={{ fontSize: '40px', color: '#000', border: '3px solid #48b7ad', borderRadius: '50px' }} />
         </IconButton>
-                    Atividade
-                </DialogTitle>
+        Atividade
+      </DialogTitle>
       <DialogContent>
         <DialogContentText>
           Adicione uma actividade que faz com frequencia para que esteja elegivel na criação de um novo plano diario
-                </DialogContentText>
-        <TextField autoFocus margin="dense" id="name" label="Nome da actividade" type="text" fullWidth />
+        </DialogContentText>
+        <TextField autoFocus margin="dense" value={nomeActividade} onChange={putActivityName} id="name" label="Nome da actividade" type="text" fullWidth />
         <Autocomplete
           id="free-solo-demo"
           freeSolo
-          options={tpmCategoria.map((option) => option.nomeCat)}
+          inputValue={categoria}
+          onInputChange={putCategoria}
+          options={tpmCategoria.map((option) => option.name)}
           renderInput={(params) => (
-            <TextField {...params} label="Categoria" margin="normal" />
+            <TextField {...params} name="bela" label="Categoria" margin="normal" />
           )}
         />
       </DialogContent>
       <DialogActions>
-        <Button color="primary" style={{ color: 'green' }} >
+        <Button color="primary" style={{ color: 'green' }} onClick={submitData}>
           Salvar
-                </Button>
-        <Button color="secondary">
+        </Button>
+        <Button color="secondary" onClick={closeForm}>
           Cancelar
-                </Button>
+        </Button>
       </DialogActions>
-    </Dialog >
+    </Dialog>
   );
 };
-const tpmCategoria = [
-  { nomeCat: 'ana' }
-]
+
 export default InsertActivity;         

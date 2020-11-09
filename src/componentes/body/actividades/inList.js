@@ -5,6 +5,13 @@ import { Button, ButtonGroup, IconButton } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import UnarchiveIcon from '@material-ui/icons/Unarchive';
+import { useSelector } from 'react-redux';
+import {
+    selectActividade,
+} from '../../../redux/atividade/actividadeSlice';
+import {
+    selectCategoria,
+} from '../../../redux/categoria/categoriaSlice';
 const Fundo = styled.div`
     width: 100%;
     display:flex;
@@ -91,33 +98,15 @@ const Text = styled.p`
     }
 `;
 export default function Actividades() {
-    const tmp = [
-        {
-            task: 'Arrumar o Quintal',
-            categoria: 'Domestico',
-            data: '20/02/2020'
-        },
-        {
-            task: 'Estudar para as parcelares',
-            categoria: 'Acadêmico',
-            data: '20/02/2020'
-        },
-        {
-            task: 'Momento com Jah',
-            categoria: 'Espiritualidade',
-            data: '20/02/2020'
-        },
-        {
-            task: 'Conversar com a familiar',
-            categoria: 'Pessoal',
-            data: '20/02/2020'
-        },
-        {
-            task: 'Namorar',
-            categoria: 'Relaxo',
-            data: '20/02/2020'
+    const tmp = useSelector(selectActividade);
+    const tpmCategoria = useSelector(selectCategoria);
+
+    const getCategoria = index => {
+        for (let i = 0; i < tpmCategoria["length"]; i++) {
+            if (tpmCategoria[i].index === index)
+                return tpmCategoria[i].name;
         }
-    ]
+    };
     return (
         <Fundo>
             {
@@ -131,9 +120,9 @@ export default function Actividades() {
                             </MyImg>
                             <ContentBox>
                                 <ContentTitle>
-                                    <Text className="subtitle">{i.categoria}</Text>
+                                    <Text className="subtitle">{getCategoria(i.indexCategoria)}</Text>
                                     <div style={{ display: 'flex' }} >
-                                        <Text className="title">{i.task}</Text>
+                                        <Text className="title">{i.name}</Text>
                                         <Text className="dataC">{i.data}</Text>
                                     </div>
                                 </ContentTitle>

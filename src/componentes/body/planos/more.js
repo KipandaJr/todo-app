@@ -8,7 +8,10 @@ import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
-
+import { useDispatch } from 'react-redux';
+import {
+    toogleFormAddActivity
+} from '../../../redux/outros/formAddActivitySlice';
 const useStyles = makeStyles((theme) => ({
     root: {
         height: 380,
@@ -23,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const actions = [
-    { icon: <PostAddIcon />, name: 'Adicionar atividade ao plano' },
     { icon: <SaveIcon />, name: 'Salvar o plano actual' },
     { icon: <CancelIcon />, name: 'Remover à ultima actividade inserida' },
     { icon: <DeleteForeverIcon />, name: 'Cancelar todo Plano' },
@@ -31,6 +33,10 @@ const actions = [
 
 export default function MoreOptions() {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const openForm = () => {
+        dispatch(toogleFormAddActivity());
+    };
     const [open, setOpen] = React.useState(false);
 
 
@@ -51,7 +57,13 @@ export default function MoreOptions() {
             onOpen={handleOpen}
             open={open}
         >
-            {actions.map((action) => (
+            <SpeedDialAction
+                key='Adicionar atividade ao plano'
+                icon={<PostAddIcon />}
+                tooltipTitle='Adicionar atividade ao plano'
+                onClick={openForm}
+            />
+            {actions.map((action, index) => (
                 <SpeedDialAction
                     key={action.name}
                     icon={action.icon}
