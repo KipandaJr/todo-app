@@ -1,5 +1,5 @@
 import { Button, TextField } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import fundo from '../../_files/images/login.svg';
 import { Redirect } from 'react-router-dom';
@@ -50,7 +50,7 @@ const Login = () => {
     const [password, setPassword] = React.useState('');
 
     const logar = () => {
-        if ((username === "Kipas-ToDo-Tec") || (password === 'kipas-todo-tec'))
+        if ((username === "Kipas-ToDo-Tec") || (password === '123456789'))
             setRedirect(true);
         else
             alert("Login falhado");
@@ -63,6 +63,10 @@ const Login = () => {
     const putPassword = (event) => {
         setPassword(event.target.value);
     }
+
+    useEffect(() => {
+        alert("Dados de login\nNome de usuario: Kipas-ToDo-Tec\nPassword: 123456789");
+    }, []);
     return (
         <Fundo>
             { redirect && <Redirect to="/account/" />}

@@ -24,6 +24,9 @@ const Body = styled.div`
   margin:4px auto;
 `;
 export default function App() {
+  React.useEffect(() => {
+    alert("Infelizmente essa pagina ainda não é responsiva\nVisualize esse site como se estivesse a ver no computador\nPara melhor experiência\nEquipe da ToDo-Tec AGRADECE à compreensão");
+  }, []);
   return (
     <MyContainer>
       <LeftBar />

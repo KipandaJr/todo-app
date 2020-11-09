@@ -3,7 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 export const actividadeSlice = createSlice({
     name: 'actividade',
     initialState: {
-        value: [],
+        value: [
+            {
+                index: 1,
+                name: 'Conversar com Yahuwah',
+                indexCategoria: 3,
+                data: '09/11/2020'
+            }
+        ],
     },
     reducers: {
         newActividade: (state, action) => {

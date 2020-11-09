@@ -17,7 +17,6 @@ const Actividades = () => {
         if (nextView !== null && view !== nextView)
             setView(nextView);
     };
-
     return (
         <Fundo>
             <ToggleButtonGroup orientation="horizontal" value={view} style={{ alignSelf: 'flex-end' }} exclusive onChange={handleChange}>

@@ -85,18 +85,18 @@ export default function LeftBar() {
             </IconButton>
             <MyName>Antonio Kipanda Cardoso</MyName>
             <MyJob>Estudante</MyJob>
-            <Link to="account/ver-perfil"><Button style={{ backgroundColor: '#fff', fontWeight: '400', marginTop: '5px', padding: '0px 25px', textTransform: 'lowercase', color: '#48b7ad', borderRadius: '50px' }}>
+            <Link to="./ver-perfil"><Button style={{ backgroundColor: '#fff', fontWeight: '400', marginTop: '5px', padding: '0px 25px', textTransform: 'lowercase', color: '#48b7ad', borderRadius: '50px' }}>
                 Ver perfil
             </Button>
             </Link>
             <ListAction>
-                <Link to="account/" style={{ width: '100%' }} >
+                <Link to="./" style={{ width: '100%', textDecoration: 'none', color: '#fff' }} >
                     <ListItem className="selected">
                         <Icone alt="calendar" src={calendar} />
                         <span>Minhas actividades</span>
                     </ListItem>
                 </Link>
-                <Link to="account/planos" style={{ width: '100%' }} >
+                <Link to="./planos" style={{ width: '100%', textDecoration: 'none', color: '#fff' }} >
                     <ListItem>
                         <Icone alt="dash" src={dash} />
                         <span> Planos </span>
